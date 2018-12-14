@@ -1,0 +1,51 @@
+<html>
+ <head></head>
+ <body ng-app="myApp">
+  <h3>Ajax Programming in Angular JS</h3>
+  <hr/>
+  <div ng-controller="DemoController">
+   <input type="button" value="GetDepts" ng-click="getDepts()"/>
+   <br/>
+  <script>console.log("Enter in body tag");</script>
+   <table border="2" width="400">
+  <script> console.log("Enter in table tag");</script>
+  <tr>
+	 <th>DeptNo</th>
+	 <th>Dname</th>
+	 <th>Location</th>
+	</tr>
+	<tr ng-repeat="item in depts">
+	 <td>{{item.deptno}}</td>
+	 <td>{{item.dname}}</td>
+	 <td>{{item.loc}}</td>
+	</tr>
+   
+   </table> 
+  </div>
+  <script src="angular.js"></script>
+  <script>
+   var app=angular.module("myApp",[]);
+   app.controller("DemoController",function($scope,$http)
+   {
+    $scope.depts=[];
+	$scope.getDepts=function()
+	{
+	   $http( {
+	           url:"GetDepts.jsp",
+			   method:"GET",
+			   data:"",
+			   header:{contentType:"application/json"}
+	          }
+			)
+	  .then(function(response)	
+             {
+	          $scope.depts=response.data;
+	         }
+		    );
+	};
+   
+  });
+  </script>
+  
+ </body>
+</html>
