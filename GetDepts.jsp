@@ -4,7 +4,7 @@
   	
 //Class.forName("oracle.jdbc.driver.OracleDriver");
 //   Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","HR","HR");
-// String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+// String JDBC_DRIVER = "com.mysql.jdbc.Driver";  //MySql Driver
 	  String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";  
 	 
 	// String DB_URL = "jdbc:mysql://localhost:3308/test";
